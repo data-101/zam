@@ -2,7 +2,7 @@ import { ProductList } from "../components/ProductList";
 import { EdamanObject } from "../model/FoodAPI";
 import { Product } from "../model/Product";
 
-
+const key = require("../secret.json")
 
 
 const products: Product[] = [{ "name": "Apple", "rating": 2, "description": "Hello", "id": "food_a1gb9ubb72c7snbuxr3weagwv0dd", image: "https://www.edamam.com/food-img/42c/42c006401027d35add93113548eeaae6.jpg" },
@@ -19,7 +19,7 @@ export const getProducts = async (searchText: string = ''): Promise<Product[]> =
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "edamam-food-and-grocery-database.p.rapidapi.com",
-            "x-rapidapi-key": "a2cc2bb0cfmsh42d1d949aaba62ep17046ajsn73e1c32e13e1"
+            "x-rapidapi-key": key.key
         }
     }).then(res => res.json() as Promise<EdamanObject>)
         .then(response => {
@@ -47,7 +47,7 @@ export const getProductById = async (id: string): Promise<Product> => {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "edamam-food-and-grocery-database.p.rapidapi.com",
-            "x-rapidapi-key": "a2cc2bb0cfmsh42d1d949aaba62ep17046ajsn73e1c32e13e1"
+            "x-rapidapi-key": key.key
         }
     }).then(res => res.json() as Promise<EdamanObject>)
         .then(response => {
