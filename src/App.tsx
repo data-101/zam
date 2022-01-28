@@ -22,6 +22,8 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import ProductPage from './pages/ProductPage';
+import ItemList from './pages/ItemList';
 
 setupIonicReact();
 
@@ -32,8 +34,12 @@ const App: React.FC = () => (
         <Route exact path="/home">
           <Home />
         </Route>
+        <Route path="/product/:id" component={ProductPage} exact={true} />
         <Route exact path="/test">
           <Test />
+        </Route>
+        <Route exact path="/list">
+          <ItemList />
         </Route>
         <Route exact path="/">
           <Redirect to="/home" />

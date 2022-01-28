@@ -1,4 +1,5 @@
-import { IonContent, IonHeader, IonPage, IonSearchbar, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonIcon, IonLabel, IonPage, IonSearchbar, IonTabBar, IonTabButton, IonTabs, IonTitle, IonToolbar } from '@ionic/react';
+import { calendar, people, informationCircle } from 'ionicons/icons';
 import { useEffect, useState } from 'react';
 import ExploreContainer from '../components/ExploreContainer';
 import { ProductList } from '../components/ProductList';
@@ -24,6 +25,7 @@ const Home: React.FC = () => {
 
 
   return (
+
     <IonPage>
       <IonHeader>
         <IonToolbar>
@@ -40,7 +42,21 @@ const Home: React.FC = () => {
         <IonSearchbar inputmode="search" onIonChange={e => setSearchText(e.detail.value!)} onKeyPress={filter}></IonSearchbar>
         < ProductList products={producList} />
       </IonContent >
+
+      <IonTabBar slot="bottom">
+        <IonTabButton tab="schedule" href="/home">
+          <IonIcon icon={calendar} />
+          <IonLabel>Store</IonLabel>
+        </IonTabButton>
+        <IonTabButton tab="list" href="/list">
+          <IonIcon icon={people} />
+          <IonLabel>List</IonLabel>
+        </IonTabButton>
+      </IonTabBar>
     </IonPage >
+
+
+
   );
 };
 

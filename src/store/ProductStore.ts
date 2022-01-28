@@ -13,3 +13,7 @@ export const getProducts = (searchText: string = ''): Product[] => {
         return product.name.toLowerCase().startsWith(searchText.toLowerCase());
     });
 }
+
+export const getProductById = (id: string): Product => {
+    return products.filter(p => p.id === id)[0]
+} 

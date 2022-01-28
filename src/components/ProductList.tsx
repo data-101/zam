@@ -35,7 +35,7 @@ export const ProductList: React.FC<ProductProps> = ({ products }) => {
                         <IonCol size="12" size-md="6" key={product.id}>
                             <IonCard className="speaker-card">
                                 <IonCardHeader>
-                                    <IonItem button detail={false} lines="none" className="speaker-item" routerLink={`/tabs/speakers/${product.id}`}>
+                                    <IonItem button detail={false} lines="none" className="speaker-item" routerLink={`/product/${product.id}`}>
                                         <IonAvatar slot="start">
                                             <img src={wifi} alt="Speaker profile pic" />
                                         </IonAvatar>
