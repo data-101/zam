@@ -32,10 +32,10 @@ const ProductPage: React.FC<ProductPageProp> = ({ match }) => {
     const [actionSheetButtons, setActionSheetButtons] = useState<ActionSheetButton[]>([]);
     const [actionSheetHeader, setActionSheetHeader] = useState('');
 
-    const [product, setProduct] = useState<Product>({ id: '1', name: '', description: '', rating: 0 });
+    const [product, setProduct] = useState<Product>({ id: '1', name: '', description: '', rating: 0, image: 'wifi' });
 
     useEffect(() => {
-        setProduct(getProductById(match.params.id))
+        getProductById(match.params.id).then(pd => setProduct(pd))
     }, [])
 
 
@@ -87,7 +87,7 @@ const ProductPage: React.FC<ProductPageProp> = ({ match }) => {
                 </IonHeader>
 
                 <div className="product-background">
-                    <img src={wifi} alt={product.name} />
+                    <img src={product.image} alt={product.name} />
                     <h2>{product.name}</h2>
                 </div>
 

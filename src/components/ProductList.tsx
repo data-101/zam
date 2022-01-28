@@ -14,7 +14,7 @@ export const ProductList: React.FC<ProductProps> = ({ products }) => {
     const itemList = () => {
         return products.map((product) => (
             <IonItem>
-                <IonIcon icon={wifi} slot="start" />
+                <IonIcon icon={product.image} slot="start" />
                 <IonLabel>{product.name}</IonLabel>
             </IonItem>
         )
@@ -37,7 +37,7 @@ export const ProductList: React.FC<ProductProps> = ({ products }) => {
                                 <IonCardHeader>
                                     <IonItem button detail={false} lines="none" className="speaker-item" routerLink={`/product/${product.id}`}>
                                         <IonAvatar slot="start">
-                                            <img src={wifi} alt="Speaker profile pic" />
+                                            <img src={product.image} alt="Speaker profile pic" />
                                         </IonAvatar>
                                         <IonLabel>
                                             <h2>{product.name}</h2>

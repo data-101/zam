@@ -12,7 +12,7 @@ const Home: React.FC = () => {
   const [producList, setProductList] = useState<Product[]>([]);
 
   useEffect(() => {
-    setProductList(getProducts());
+    getProducts(searchText).then(products => setProductList(products));
   }, []);
 
   const filter = (e: React.KeyboardEvent<HTMLIonSearchbarElement>) => {
@@ -20,7 +20,7 @@ const Home: React.FC = () => {
     if (e.key != 'Enter') {
       return;
     }
-    setProductList(getProducts(searchText));
+    getProducts(searchText).then(products => setProductList(products));
   };
 
 
