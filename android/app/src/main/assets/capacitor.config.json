@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "zam",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}

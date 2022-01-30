@@ -24,6 +24,10 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import ProductPage from './pages/ProductPage';
 import ItemList from './pages/ItemList';
+import awsExports from "./aws-exports";
+import Amplify from 'aws-amplify';
+import Login from './pages/Login';
+Amplify.configure(awsExports);
 
 setupIonicReact();
 
@@ -40,6 +44,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/list">
           <ItemList />
+        </Route>
+        <Route exact path="/login">
+          <Login />
         </Route>
         <Route exact path="/">
           <Redirect to="/home" />

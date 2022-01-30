@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-zam-staging-40440-authRole",
+      "UnauthRoleArn": "arn:aws:iam::417084310984:role/amplify-zam-staging-40440-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::417084310984:role/amplify-zam-staging-40440-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-zam-staging-40440-deployment",
+      "UnauthRoleName": "amplify-zam-staging-40440-unauthRole",
+      "StackName": "amplify-zam-staging-40440",
+      "StackId": "arn:aws:cloudformation:us-east-1:417084310984:stack/amplify-zam-staging-40440/bfa41a90-8181-11ec-89d6-0e029f9deaab",
+      "AmplifyAppId": "d1wnrml2ym2tge"
+    },
+    "categories": {
+      "auth": {
+        "zam": {}
+      }
+    }
+  }
+}
