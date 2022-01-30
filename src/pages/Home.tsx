@@ -15,14 +15,13 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     getProducts(searchText).then(products => setProductList(products));
-    // Auth.signIn('test-1', 'HelloTest%1').then(res=> console.log(res)).catch(err=>console.log(err));
   }, []);
 
-  const filter = (e: React.KeyboardEvent<HTMLIonSearchbarElement>) => {
-
-    if (e.key != 'Enter') {
-      return;
-    }
+  const filter = (event : React.FormEvent) => {
+    event.preventDefault();
+    // if (e.key != 'Enter') {
+    //   return;
+    // }
     getProducts(searchText).then(products => setProductList(products));
   };
 
@@ -43,7 +42,12 @@ const Home: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <ExploreContainer />
-        <IonSearchbar inputmode="search" onIonChange={e => setSearchText(e.detail.value!)} onKeyPress={filter}></IonSearchbar>
+        <div >
+          <form onSubmit={filter}>
+        <IonSearchbar inputmode="search" onIonChange={e => setSearchText(e.detail.value!)}></IonSearchbar>
+        <IonButton expand="block" type="submit">Search</IonButton>
+        </form>
+        </div>
         < ProductList products={producList} />
       </IonContent >
 
