@@ -34,7 +34,7 @@
 
     height: calc(250px + var(--ion-safe-area-top));
 
-    background: center / cover skyblue no-repeat;
+    background: center / cover LightSkyBlue no-repeat;
   }
 
   .product-background img {
@@ -72,7 +72,7 @@
     margin-top: 20px;
     margin-bottom: 20px;
 
-    background: var(--ion-color-step-150, #d7d8da);
+    background: var(--ion-color-step-150, LightGrey);
   }
 
 }
