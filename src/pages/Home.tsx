@@ -6,7 +6,10 @@ import { ProductList } from '../components/ProductList';
 import { Product } from '../model/Product';
 import { getProducts } from '../store/ProductStore';
 import './Home.css';
-import { Auth } from 'aws-amplify';
+// import { Auth } from 'aws-amplify';
+import { DataStore } from "@aws-amplify/datastore";
+import { API } from 'aws-amplify';
+
 
 
 const Home: React.FC = () => {
@@ -15,6 +18,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     getProducts(searchText).then(products => setProductList(products));
+    // DataStore.save(d).then((s)=>console.log(s));
   }, []);
 
   const filter = (event : React.FormEvent) => {
