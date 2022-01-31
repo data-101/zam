@@ -83,7 +83,7 @@ const ItemList: React.FC = () => {
             onIonChange={(e) => setText(e.detail.value!)}
           ></IonInput>
           <IonButton expand="block" type="submit">
-            Search
+            Add
           </IonButton>
         </form>
         {itemList.map((data) => (
